@@ -1,9 +1,12 @@
 import os
 from distutils.dir_util import remove_tree
+from logging import getLogger
 from os.path import join, isdir, isfile, islink, exists
 from stat import *
 
 WRITE = S_IWUSR | S_IWGRP | S_IWOTH
+
+logger = getLogger('os_utils.path')
 
 
 def clear_dir(path):
@@ -39,5 +42,7 @@ def add_permissions_to_dir_rec(path, permissions):
 
 
 def mkpath(path):
-    if not isdir(path):
+    try:
         os.makedirs(path, exist_ok=True)
+    except OSError:
+        logger.warning('Failure during creation of the path: %s, path exists already most likely', path)
