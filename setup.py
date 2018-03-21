@@ -9,6 +9,6 @@ setup(
     description='os utils to reduce code copy paste',
     author='Alex Buchkovsky',
     author_email='olex.buchkovsky@gmail.com',
-    url='https://github.com/ahcub/armory/tree/master/os_utils',
+    url='https://github.com/ahcub/os_utils',
     keywords=['logging', 'path', 'dirs', 'files'],
 )
