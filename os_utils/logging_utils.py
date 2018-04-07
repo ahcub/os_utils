@@ -63,6 +63,7 @@ def timeit():
     logger.info('TIME SPENT: %s', (datetime.now() - start_time))
 
 
+@contextmanager
 def timeit_with_context(context_name):
     start_time = datetime.now()
     yield
