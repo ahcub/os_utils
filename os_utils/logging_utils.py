@@ -9,8 +9,8 @@ from os.path import join
 LOGGING_FORMAT = '%(asctime)-15s %(levelname)s %(message)s'
 DATE_FORMAT = '[%Y-%m-%d %H:%M:%S]'
 
-logger = logging.getLogger()
-logger.level = logging.DEBUG
+logger = logging.getLogger('os_utils.logging_utils')
+logging.getLogger().level = logging.DEBUG
 TEN_MB = 10 * (1024 ** 2)
 
 
