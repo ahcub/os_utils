@@ -44,5 +44,5 @@ def add_permissions_to_dir_rec(path, permissions):
 def mkpath(path):
     try:
         os.makedirs(path, exist_ok=True)
-    except OSError:
+    except (OSError, FileExistsError):
         logger.warning('Failure during creation of the path: %s, path exists already most likely', path)
