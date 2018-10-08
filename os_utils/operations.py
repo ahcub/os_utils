@@ -25,7 +25,7 @@ def zip_dir(path, zip_file_path=None, zip_root=None):
     zip_root = zip_root or basename(path)
     with ZipFile(zip_file_path, 'w') as zip_file:
         for file in findall(path):
-            if exists(file):
+            try:
                 zip_file.write(file, join(zip_root, relpath(file, path)))
-            else:
+            except IOError:
                 logger.warning('file disappeared before it was zipped: %s', file)
