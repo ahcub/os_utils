@@ -45,10 +45,10 @@ def configure_file_and_stream_logger(stream=sys.stdout, filename='app.log', leve
     configure_file_logger(filename, level, rotate_file)
 
 
-def configure_file_rotate_handler(filename='app.log', level='DEBUG'):
+def configure_file_rotate_handler(filename='app.log', level='DEBUG', max_bytes=TEN_MB):
     file_path = join(getcwd(), filename)
     file_handler = logging.handlers.RotatingFileHandler(filename=file_path,
-                                                        maxBytes=TEN_MB, backupCount=3)
+                                                        maxBytes=max_bytes, backupCount=3)
     file_handler.level = logging.getLevelName(level)
     formatter = logging.Formatter(datefmt=DATE_FORMAT, fmt=LOGGING_FORMAT)
     file_handler.setFormatter(formatter)

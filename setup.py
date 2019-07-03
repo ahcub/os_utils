@@ -10,7 +10,7 @@ with open('README.md') as file:
 setup(
     name='os_utils',
     packages=find_packages(include=('os_utils', )),
-    version='0.1.5',
+    version='0.1.6',
     description='os utils to reduce code copy paste',
     long_description=long_description,
     long_description_content_type='text/markdown',
