@@ -1,0 +1,134 @@
+# Ruff configuration for maximum code quality
+
+# Line length
+line-length = 100
+
+# Target Python version
+target-version = "py314"
+
+# Exclude common directories
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+[lint]
+# Enable all rules by default
+select = [
+    "F",     # Pyflakes
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "C90",   # mccabe complexity
+    "I",     # isort
+    "N",     # pep8-naming
+    "D",     # pydocstyle
+    "UP",    # pyupgrade
+    "YTT",   # flake8-2020
+    "ANN",   # flake8-annotations
+    "ASYNC", # flake8-async
+    "S",     # flake8-bandit
+    "BLE",   # flake8-blind-except
+    "FBT",   # flake8-boolean-trap
+    "B",     # flake8-bugbear
+    "A",     # flake8-builtins
+    "COM",   # flake8-commas
+    "C4",    # flake8-comprehensions
+    "DTZ",   # flake8-datetimez
+    "T10",   # flake8-debugger
+    "EM",    # flake8-errmsg
+    "EXE",   # flake8-executable
+    "FA",    # flake8-future-annotations
+    "ISC",   # flake8-implicit-str-concat
+    "ICN",   # flake8-import-conventions
+    "G",     # flake8-logging-format
+    "INP",   # flake8-no-pep420
+    "PIE",   # flake8-pie
+    "T20",   # flake8-print
+    "PYI",   # flake8-pyi
+    "PT",    # flake8-pytest-style
+    "Q",     # flake8-quotes
+    "RSE",   # flake8-raise
+    "RET",   # flake8-return
+    "SLF",   # flake8-self
+    "SLOT",  # flake8-slots
+    "SIM",   # flake8-simplify
+    "TID",   # flake8-tidy-imports
+    "TCH",   # flake8-type-checking
+    "INT",   # flake8-gettext
+    "ARG",   # flake8-unused-arguments
+    "PTH",   # flake8-use-pathlib
+    "TD",    # flake8-todos
+    "FIX",   # flake8-fixme
+    "ERA",   # eradicate
+    "PD",    # pandas-vet
+    "PGH",   # pygrep-hooks
+    "PL",    # Pylint
+    "TRY",   # tryceratops
+    "FLY",   # flynt
+    "NPY",   # NumPy-specific rules
+    "AIR",   # Airflow
+    "PERF",  # Perflint
+    "FURB",  # refurb
+    "LOG",   # flake8-logging
+    "RUF",   # Ruff-specific rules
+]
+
+# Ignore specific rules that may be too strict for this project
+ignore = [
+    "D100",   # Missing docstring in public module
+    "D101",   # Missing docstring in public class
+    "D102",   # Missing docstring in public method
+    "D103",   # Missing docstring in public function
+    "D104",   # Missing docstring in public package
+    "D105",   # Missing docstring in magic method
+    "D107",   # Missing docstring in __init__
+    "ANN001", # Missing type annotation for function arguments
+    "ANN201", # Missing return type annotation
+    "ANN401", # Dynamically typed expressions (Any) are disallowed
+    "S101",   # Use of assert detected
+    "TD002",  # Missing author in TODO
+    "TD003",  # Missing issue link on the line following this TODO
+    "FIX002", # Line contains TODO
+    "COM812", # Trailing comma missing (conflicts with formatter)
+    "ISC001", # Implicit string concatenation (conflicts with formatter)
+    "FBT001", # Boolean positional argument - part of existing API
+    "FBT002", # Boolean default positional argument
+    "PTH",    # Use pathlib - keeping os.path for backward compatibility
+]
+
+# Allow autofix for all enabled rules
+fixable = ["ALL"]
+unfixable = []
+
+[lint.mccabe]
+# Maximum cyclomatic complexity
+max-complexity = 10
+
+[lint.pydocstyle]
+# Use Google-style docstrings
+convention = "google"
+
+[lint.isort]
+# Use a single line for each import
+force-single-line = false
+lines-after-imports = 2
+

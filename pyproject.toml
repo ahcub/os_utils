@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "os_utils"
+version = "0.1.6"
+description = "os utils to reduce code copy paste"
+readme = "README.md"
+authors = [
+    { name = "Alex Buchkovsky", email = "olex.buchkovsky@gmail.com" }
+]
+keywords = ["logging", "path", "dirs", "files"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ahcub/os_utils"
+Repository = "https://github.com/ahcub/os_utils"
+
+[tool.uv]
+dev-dependencies = [
+    "mypy==1.18.2",
+    "ruff==0.14.4",
+]
