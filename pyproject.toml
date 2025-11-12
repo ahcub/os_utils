@@ -8,7 +8,7 @@ version = "0.2.0"
 description = "os utils to reduce code copy paste"
 readme = "README.md"
 authors = [
-    { name = "Alex Buchkovsky", email = "olex.buchkovsky@gmail.com" }
+    { name = "Alex Buchkovsky", email = "alex.buchkovsky@gmail.com" }
 ]
 keywords = ["logging", "path", "dirs", "files"]
 classifiers = [
